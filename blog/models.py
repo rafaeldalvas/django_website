@@ -19,6 +19,4 @@ class Post (models.Model):
     class Meta:
         ordering = ('-publicado',)
 
-    def __str__(self):
-        return ' {} - {} '.format(self.titulo,self.autor)
 
