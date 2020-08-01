@@ -5,5 +5,5 @@
             <h2>{{ object.titulo }}</h2>
             <p>{{ object.conteudo }} </p>
         </div>
-    <a href="{% url 'post_edit' post.pk %}">Editar post</a>
+    <a href="{{ object.get_absolute_url_update }}">Editar post</a>
 {% endblock content %}

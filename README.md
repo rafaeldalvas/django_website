@@ -34,6 +34,7 @@ $ pip install pipenv
 ```
 cd {{ project_name }}/
 ```
+4. Run server
 ```
 $ python manage.py runserver
 ```
