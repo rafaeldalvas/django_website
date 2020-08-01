@@ -6,4 +6,6 @@
             <p>{{ object.conteudo }} </p>
         </div>
     <a href="{{ object.get_absolute_url_update }}">Editar post</a>
+    <br>
+    <a href="{{ object.get_absolute_url_delete }}">Remover post</a>
 {% endblock content %}
