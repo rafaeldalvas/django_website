@@ -32,7 +32,7 @@ $ pip install pipenv
 
 3. Navigate to the project directory
 ```
-cd {{ project_name }}/
+$ cd {{ project_name }}/
 ```
 4. Run server
 ```
