@@ -2,7 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from django.utils.text import slugify
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 class PublishedManager(models.Manager):
@@ -38,3 +40,10 @@ class Post (models.Model):
 
     def __str__(self):
         return self.titulo
+
+@receiver(post_save, sender=Post)
+def insertSlug(sender,instance,**kwargs):
+        if not instance.slug:
+            instance.slug = slugify(instance.titulo)
+            return instance.save()
+
