@@ -40,9 +40,14 @@ $ python manage.py runserver
 ```
 
 ## Useful links
-[Tutorial Django Girls](https://tutorial.djangogirls.org/pt/)
+[Signals Documentation](https://docs.djangoproject.com/en/3.0/topics/signals/)
 
-[python4noobs](https://github.com/wendrewdevelop/python4noobs)
+[Django authentication system Documentation](https://docs.djangoproject.com/en/3.0/topics/auth/default/)
+
+[The messages framework Documentation](https://docs.djangoproject.com/en/3.0/ref/contrib/messages/#module-django.contrib.messages)
+
+[Class-Based Views - Detailed descriptions](http://ccbv.co.uk/) 
+
 
 
 
