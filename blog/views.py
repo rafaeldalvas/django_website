@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView, UpdateView
 from django.views.generic.edit import CreateView, DeleteView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from . models import Post
 # Create your views here.
 
@@ -15,7 +16,7 @@ class BlogDetailView(DetailView):
      model = Post
      template_name = 'blog/post_detail.html'
 
-class BlogCreateView(SuccessMessageMixin,CreateView):
+class BlogCreateView(LoginRequiredMixin, SuccessMessageMixin,CreateView):
     model = Post
     template_name = 'blog/post_new.html'
     fields = ('autor','titulo','conteudo', 'status')
@@ -27,7 +28,7 @@ class BlogCreateView(SuccessMessageMixin,CreateView):
              calculated_field=self.object.titulo,
          )
 
-class BlogUpdateView(SuccessMessageMixin, UpdateView):
+class BlogUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Post
     template_name = 'blog/post_edit.html'
     fields = ('autor','titulo','conteudo', 'status')
@@ -39,7 +40,7 @@ class BlogUpdateView(SuccessMessageMixin, UpdateView):
             calculated_field=self.object.titulo,
         )
 
-class BlogDeleteView(SuccessMessageMixin, DeleteView):
+class BlogDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
     success_url = reverse_lazy('home')
